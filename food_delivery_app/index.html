@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Salem Restaurants</h1>
+        <div class="filter">
+            <label for="cuisine">Filter by Cuisine:</label>
+            <select id="cuisine">
+                <option value="all">All</option>
+                <option value="italian">Italian</option>
+                <option value="indian">Indian</option>
+                <option value="chinese">Chinese</option>
+                <option value="mexican">Mexican</option>
+            </select>
+        </div>
+        <div class="restaurant-grid" id="restaurant-grid">
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="your-dish-image-url.jpg" alt="Dish Image" />
+                </div>
+                <div class="restaurant-details">
+                    <h2>Restaurant Name</h2>
+                    <p>Delicious food and vibrant atmosphere...</p>
+                    <button class="order-now" onclick="openOrderForm()">Order Now</button> <!-- Add class here -->
+                </div>
+            </div>
+            <!-- More restaurant cards can be added here -->
+        </div>
+
+        <!-- Order Modal -->
+        <div id="order-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeOrderForm()">&times;</span>
+                <h2>Order from <span id="order-restaurant"></span></h2>
+                <div class="order-total" id="order-total">Total: $0.00</div>
+                <form id="order-form">
+                    <label for="items">Select Items:</label>
+                    <div class="menu-items"></div>
+                    <button type="submit">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Food Delivery App</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

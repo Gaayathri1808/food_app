@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Orders</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Your Orders</h1>
+        <div id="order-list">
+            <!-- Orders will be populated here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Food Delivery App</p>
+    </footer>
+
+    <script>
+        const orders = JSON.parse(sessionStorage.getItem('orders')) || [];
+
+        function displayOrders() {
+            const orderList = document.getElementById('order-list');
+            orderList.innerHTML = ''; // Clear existing content
+
+            if (orders.length === 0) {
+                orderList.innerHTML = '<p>No orders placed yet.</p>';
+            } else {
+                let totalCost = 0;
+                orders.forEach(order => {
+                    const orderItem = document.createElement('div');
+                    orderItem.className = 'order-item';
+                    orderItem.innerHTML = `
+                        <h3>Restaurant: ${order.restaurant}</h3>
+                        <p>Items: ${order.items.join(', ')}</p>
+                        <p>Total: $${order.total.toFixed(2)}</p>
+                    `;
+                    orderList.appendChild(orderItem);
+                    totalCost += order.total;
+                });
+
+                const totalDisplay = document.createElement('div');
+                totalDisplay.innerHTML = `<strong>Grand Total: $${totalCost.toFixed(2)}</strong>`;
+                orderList.appendChild(totalDisplay);
+            }
+        }
+
+        // Call displayOrders to show the orders when the page loads
+        displayOrders();
+    </script>
+</body>
+</html>

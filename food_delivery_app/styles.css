@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    font-family: 'Pacifico', cursive;
+    margin: 0;
+    padding: 0;
+    background-image: url('bg.jpeg'); /* Add your background image URL here */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+}
+
+header {
+    background: rgba(255, 0, 0, 0.9); /* Bright red header with some transparency */
+    color: #ffffff; /* White text for contrast */
+    padding: 15px 0;
+    text-align: center; /* Center text in header */
+    font-size: 1.5em; /* Increased font size for header */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px; /* Increased margin for better spacing */
+}
+
+nav ul li a {
+    color: #ffffff; /* White link color */
+    text-decoration: none;
+    font-weight: bold; /* Bold text for emphasis */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Change link color on hover to gold */
+}
+
+h1 {
+    text-align: center;
+    color: #eb003b; /* Bright orange heading color */
+    font-size: 5em; /* Increased font size */
+    margin: 20px 0; /* Margin for spacing */
+    font-family: 'Pacifico', cursive; /* Pacifico font for header */
+}
+
+/* Updated restaurant grid to display two in a row */
+.restaurant-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of items */
+    gap: 15px;
+    padding: 20px;
+    justify-content: center; /* Center the restaurant cards */
+}
+
+.restaurant-card {
+    flex: 0 1 calc(50% - 15px); /* Each card takes up 50% of the width minus the gap */
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for card */
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Rounded corners for a softer look */
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-card:hover {
+    transform: scale(1.015);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+}
+
+.restaurant-card img {
+    width: 400px;
+    height: 400px; /* Fixed height for images */
+    object-fit: cover;
+    border-top-left-radius: 10px; /* Round top corners */
+    border-top-right-radius: 10px; /* Round top corners */
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+display: flex;              /* Use flexbox */
+    justify-content: center;    /* Center horizontally */
+    align-items: center;        /* Center vertically (if needed) */          /* Set a fixed height */
+}
+.restaurant-image {
+    display: flex;              /* Use flexbox */
+    justify-content: center;    /* Center horizontally */
+    align-items: center;        /* Center vertically (if needed) */
+    height: 200px;              /* Set a fixed height */
+}
+
+.restaurant-image img {
+    max-width: 100%;           /* Ensure the image scales well */
+    height: auto;              /* Maintain aspect ratio */
+}
+
+.restaurant-card h2 {
+    font-family: 'Pacifico', cursive; /* Pacifico font for restaurant names */
+    color: #333; /* Color for restaurant names */
+    font-size: 2em; /* Increased font size for restaurant names */
+}
+
+/* Menu items and item image styles */
+.menu-items {
+    margin: 30px 0;
+}
+
+.item-img {
+    width: 75px;
+    height: 75px;
+    margin-left: 5px;
+}
+
+/* Styles for the Order Now button */
+.order-now {
+    display: inline-block;
+    padding: 20px 30px;
+    font-size: 2em; /* Adjusted font size for the button */
+    font-family: 'Pacifico', cursive;
+    color: #fff; /* White text color */
+    background: linear-gradient(45deg, #ff6f61, #de5e2c, #ffd700); /* Three-color gradient */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    transition: background 0.3s, transform 0.3s; /* Transition effects */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hover effect for the button */
+.order-now:hover {
+    background: linear-gradient(45deg, #de5e2c, #ff6f61); /* Reverse the gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker modal background */
+}
+
+.modal-content {
+    background-color: #ffffff; /* White modal background */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px; /* Rounded corners for modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff4500; /* Change close button color on hover */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0; /* Increased padding */
+    background: rgba(0, 51, 0, 0.9); /* Dark green footer with some transparency */
+    color: #ffffff; /* White text for footer */
+    font-size: 1.5em; /* Increased font size for footer */
+}
